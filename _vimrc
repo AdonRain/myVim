@@ -18,6 +18,8 @@ set number
 set nobackup
 set linebreak
 set expandtab
+set autoindent
+set smartindent
 set lines=20
 set columns=80
 set tabstop=4
@@ -35,8 +37,8 @@ set guicursor=i-ci:ver1-Cursor/lCursor
 colorscheme adon
 
 "目录树
-map <F5> :NERDTreeFromBookmark root<CR>
-let NERDTreeShowBookmarks=1
+map <F12> :NERDTreeToggle root<CR>
+let NERDTreeMinimalUI=1
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary") | q | endif
 
 "符号补全
@@ -80,15 +82,4 @@ function! InsertHtmlTag()
 	:call cursor(save_cursor[1], save_cursor[2], save_cursor[3])
 endfunction
 inoremap > <ESC>:call InsertHtmlTag()<CR>a
-
-"在浏览器预览
-function! ViewInBrowser(name)
-    let file = expand("%:p")
-    exec ":update " . file
-    let l:browsers = {
-        \"cr":"C:/Program Files (x86)/Google/Chrome/Application/chrome.exe",
-    \}
-    exec ":silent !start ". l:browsers[a:name] ." file://" . file
-endfunction
-nmap <f4> :call ViewInBrowser("cr")<cr>
 
