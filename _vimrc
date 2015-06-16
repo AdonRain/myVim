@@ -16,6 +16,7 @@ language messages en_US.utf-8
 "外观
 set number
 set nobackup
+set noswapfile
 set linebreak
 set expandtab
 set autoindent
@@ -32,14 +33,13 @@ set guioptions-=m
 set guioptions-=T
 set guioptions-=r
 set guioptions-=L
-set guifont=Consolas:h14
+set guifont=Menlo:h14
 set guicursor=i-ci:ver1-Cursor/lCursor
-colorscheme adon
+colorscheme darkZ
 
-"目录树
-map <F12> :NERDTreeToggle root<CR>
-let NERDTreeMinimalUI=1
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary") | q | endif
+"语法高亮
+au BufRead,BufNewFile *.less setfiletype css
+au BufRead,BufNewFile *.ejs setfiletype html
 
 "符号补全
 inoremap ( ()<ESC>i
@@ -47,10 +47,6 @@ inoremap [ []<ESC>i
 inoremap { {}<ESC>i
 inoremap " ""<ESC>i
 inoremap ' ''<ESC>i
-
-"语法高亮
-au BufRead,BufNewFile *.less setfiletype css
-au BufRead,BufNewFile *.ejs setfiletype html
 
 "生成头部文件
 function AddTitle()
@@ -83,3 +79,21 @@ function! InsertHtmlTag()
 endfunction
 inoremap > <ESC>:call InsertHtmlTag()<CR>a
 
+"Vundle
+filetype off
+set rtp+=~/.vim/bundle/vundle
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'EasyGrep'
+
+call vundle#end()
+filetype plugin indent on 
+
+"NERDTree
+map <F12> :NERDTreeToggle ~/workspace<CR>
+map <F2> :NERDTreeFind<CR>
+let NERDTreeMinimalUI=1
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary") | q | endif
