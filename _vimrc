@@ -20,6 +20,7 @@ set noswapfile
 set linebreak
 set expandtab
 set autoindent
+set autochdir
 set smartindent
 set lines=20
 set columns=80
@@ -33,7 +34,7 @@ set guioptions-=m
 set guioptions-=T
 set guioptions-=r
 set guioptions-=L
-set guifont=Menlo:h14
+set guifont=Menlo:h16
 set guicursor=i-ci:ver1-Cursor/lCursor
 colorscheme darkZ
 
@@ -49,7 +50,7 @@ inoremap " ""<ESC>i
 inoremap ' ''<ESC>i
 
 "生成头部文件
-function AddTitle()
+function! InitHTML()
 	call setline(1,'<!DOCTYPE html>')
 	call append(1,'<html>')
 	call append(2,'<head>')
@@ -61,7 +62,7 @@ function AddTitle()
 	call append(8,'</body>')
 	call append(9,'</html>')
 endf
-map html :call AddTitle()<CR>
+map html :call InitHTML()<CR>
 
 "标签自动闭合
 function! InsertHtmlTag()
@@ -81,7 +82,7 @@ inoremap > <ESC>:call InsertHtmlTag()<CR>a
 
 "Vundle
 filetype off
-set rtp+=~/.vim/bundle/vundle
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
