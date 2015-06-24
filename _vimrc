@@ -34,7 +34,7 @@ set guioptions-=m
 set guioptions-=T
 set guioptions-=r
 set guioptions-=L
-set guifont=Menlo:h16
+set guifont=Menlo:h14
 set guicursor=i-ci:ver1-Cursor/lCursor
 colorscheme darkZ
 
