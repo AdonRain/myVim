@@ -1,16 +1,3 @@
-" Configuration file for vim
-set modelines=0		" CVE-2007-2438
-
-" Normally we use vim-extensions. If you want true vi-compatibility
-" remove change the following statements
-set nocompatible	" Use Vim defaults instead of 100% vi compatibility
-set backspace=2		" more powerful backspacing
-
-" Don't write backup file if vim is being called by "crontab -e"
-au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
-" Don't write backup file if vim is being called by "chpass"
-au BufWrite /private/etc/pw.* set nowritebackup nobackup
-
 "encode
 set fileencodings=utf-8
 set fileencoding=utf-8
@@ -75,8 +62,7 @@ map <F12> :NERDTreeToggle ~/workspace<CR>
 map <F2> :NERDTreeFind<CR>
 let NERDTreeMinimalUI=1
 let NERDTreeChDirMode=2
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary") | q | endif
 
 "CtrlP
 let g:ctrlp_working_path_mode = 'a'
