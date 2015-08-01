@@ -61,7 +61,8 @@ colorscheme solarized
 map <F12> :NERDTreeToggle ~/workspace<CR>
 map <F2> :NERDTreeFind<CR>
 let NERDTreeMinimalUI=1
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary") | q | endif
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 "jsbeautify
 map <F5> :call JsBeautify()<CR>
