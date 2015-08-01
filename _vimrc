@@ -45,7 +45,6 @@ Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'gregsexton/MatchTag'
 Plugin 'Raimondi/delimitMate'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'kien/ctrlp.vim'
 Plugin 'EasyGrep'
 
@@ -56,6 +55,10 @@ filetype plugin indent on
 syntax enable
 set background=dark
 colorscheme solarized
+
+"airline
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '◀'
 
 "NERDTree
 map <F12> :NERDTreeToggle ~/workspace<CR>
