@@ -60,6 +60,13 @@ colorscheme solarized
 let g:airline_left_sep = '▶'
 let g:airline_right_sep = '◀'
 
+"syntastic
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+"CtrlP
+let g:ctrlp_working_path_mode = 'a'
+
 "NERDTree
 map <F12> :NERDTreeToggle ~/workspace<CR>
 map <F2> :NERDTreeFind<CR>
@@ -67,17 +74,5 @@ let NERDTreeMinimalUI=1
 let NERDTreeChDirMode=2
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary") | q | endif
 
-"CtrlP
-let g:ctrlp_working_path_mode = 'a'
-
 "jsbeautify
 map <F5> :call JsBeautify()<CR>
-
-"syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
