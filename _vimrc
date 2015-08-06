@@ -9,12 +9,14 @@ language messages en_US.utf-8
 
 "interface
 set number
+set hlsearch
 set nobackup
-set noswapfile
 set linebreak
 set expandtab
+set noswapfile
 set autoindent
 set smartindent
+set nocompatible
 set go=
 set lines=20
 set columns=80
