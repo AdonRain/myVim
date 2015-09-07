@@ -78,4 +78,6 @@ let NERDTreeChDirMode=2
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary") | q | endif
 
 "jsbeautify
-map <F5> :call JsBeautify()<CR>
+autocmd FileType javascript noremap <buffer>  <F5> :call JsBeautify()<cr>
+autocmd FileType html noremap <buffer> <F5> :call HtmlBeautify()<cr>
+autocmd FileType css noremap <buffer> <F5> :call CSSBeautify()<cr>
