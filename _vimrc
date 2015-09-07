@@ -9,6 +9,7 @@ language messages en_US.utf-8
 
 "interface
 set number
+set nowrap
 set hlsearch
 set nobackup
 set linebreak
