@@ -48,8 +48,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'scrooloose/nerdtree'
 Plugin 'gregsexton/MatchTag'
 Plugin 'Raimondi/delimitMate'
-Plugin 'kien/ctrlp.vim'
 Plugin 'rking/ag.vim'
+Plugin 'kien/ctrlp.vim'
 
 call vundle#end()
 filetype plugin indent on 
