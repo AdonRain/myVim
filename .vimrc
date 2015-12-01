@@ -75,7 +75,7 @@ map <F12> :NERDTreeToggle ~/workspace<CR>
 map <F2> :NERDTreeFind<CR>
 let NERDTreeMinimalUI=1
 let NERDTreeChDirMode=2
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") &&b:NERDTreeType == "primary") | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 "jsbeautify
 autocmd FileType javascript noremap <buffer>  <F5> :call JsBeautify()<cr>
