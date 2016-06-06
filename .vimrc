@@ -21,10 +21,10 @@ set nocompatible
 set go=
 set lines=20
 set columns=80
-set tabstop=4
-set scrolloff=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set scrolloff=2
+set shiftwidth=2
+set softtabstop=2
 set showtabline=1
 set shortmess=atI
 set guifont=Menlo:h14
